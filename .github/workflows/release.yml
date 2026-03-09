@@ -28,6 +28,9 @@ jobs:
       - name: Test
         run: mvn -B test
 
+      - name: Build
+        run: mvn -B package
+
       - name: Semantic release
         id: semantic
         uses: cycjimmy/semantic-release-action@v4
