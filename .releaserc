@@ -7,20 +7,16 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
-      "@terrestris/maven-semantic-release",
+      "@semantic-release/exec",
       {
-        "mavenTarget": "deploy",
-        "clean": false,
-        "updateSnapshotVersion": true,
-        "settingsPath": "/home/runner/.m2/settings.xml",
-        "processAllModules": true
+        "prepareCmd": "sed -i -E \"s/^version = '.*'/version = '${nextRelease.version}'/\" build.gradle"
       }
     ],
     [
       "@semantic-release/git",
       {
         "assets": [
-          "CHANGELOG.md", "pom.xml", "**/pom.xml"
+          "CHANGELOG.md", "build.gradle"
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }

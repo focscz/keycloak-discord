@@ -18,8 +18,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-          cache: 'maven'
 
-      - name: Build with Maven
-        run: mvn -B package
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build with Gradle
+        run: ./gradlew --no-daemon build
 

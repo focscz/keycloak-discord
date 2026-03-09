@@ -26,8 +26,8 @@ Note: You don't need to setup the theme in `master` realm from v0.3.0.
 
 ## Source Build
 
-Clone this repository and run `mvn package`.
-You can see `keycloak-discord-<version>.jar` under `target` directory.
+Clone this repository and run `./gradlew build`.
+You can see `keycloak-discord-<version>.jar` under `build/libs` directory.
 
 
 ## Licence
