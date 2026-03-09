@@ -28,6 +28,12 @@
     [
       "@semantic-release/github",
       {
+        "assets": [
+          {
+            "path": "target/*.jar",
+            "label": "Maven JAR"
+          }
+        ],
         "successComment": false,
         "failTitle": false
       }
