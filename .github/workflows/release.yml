@@ -12,7 +12,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Disabling shallow clone is needed for correctly determing next release with semantic release
           fetch-depth: 0
@@ -30,7 +30,7 @@ jobs:
 
       - name: Semantic release
         id: semantic
-        uses: cycjimmy/semantic-release-action@v4
+        uses: cycjimmy/semantic-release-action@v6
         with:
           semantic_version: 23
           extra_plugins: |
